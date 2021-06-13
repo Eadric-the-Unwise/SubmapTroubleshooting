@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "bigmap_map.h": "c",
+        "bigmap_tiles.h": "c",
+        "bkg_apartment_scroll_map.h": "c"
+    }
+}
