@@ -24,7 +24,7 @@ void init_house()
 
     bkg.redraw = FALSE;
 
-    bkg.camera_style = horizontal_cam;
+    bkg.camera_style = vertical_cam;
 
     SCX_REG = bkg.camera_x;
     SCY_REG = bkg.camera_y;
