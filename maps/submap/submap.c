@@ -1,48 +1,32 @@
 #include "submap.h"
 #include "../../macros.h"
 
-extern UINT16 camera_max_y;
-extern UINT16 camera_max_x;
-extern UBYTE joy;
-extern UBYTE indoor;
-extern UBYTE sliding;
-extern INT8 slide_x;
-extern INT8 slide_y;
-// current and old positions of the camera in pixels
-extern WORD camera_x, camera_y, old_camera_x, old_camera_y;
-// current and old position of the map in tiles
-extern UBYTE map_pos_x, map_pos_y, old_map_pos_x, old_map_pos_y;
-// redraw flag, indicates that camera position was changed
-extern UBYTE redraw;
-//below PROVIDED BY TOXA IN DISCORD //
-extern UINT8 level_map_width;
-extern UINT8 level_map_height;
-extern const UINT8 *level_map_data;
+extern Variables bkg;
 
 void init_submap()
 {
     HIDE_BKG;
-    camera_x = 160;
-    camera_y = 144;
-    old_camera_x = camera_x;
-    old_camera_y = camera_y;
-    map_pos_x = (UBYTE)(camera_x >> 3u);
-    map_pos_y = (UBYTE)(camera_y >> 3u);
+    bkg.camera_x = 160;
+    bkg.camera_y = 144;
+    bkg.old_camera_x = bkg.camera_x;
+    bkg.old_camera_y = bkg.camera_y;
+    bkg.map_pos_x = (UBYTE)(bkg.camera_x >> 3u);
+    bkg.map_pos_y = (UBYTE)(bkg.camera_y >> 3u);
 
     set_bkg_data(0, BKG_SUBMAP_TILE_COUNT, bkg_submap_tiles);
-    old_map_pos_x = old_map_pos_y = 255;
-    camera_max_y = (BKG_SUBMAP_MAP_HEIGHT - 18) * 8;
-    camera_max_x = (BKG_SUBMAP_MAP_WIDTH - 20) * 8;
-    set_bkg_submap(map_pos_x, map_pos_y, 20, 18, bkg_submap_map, BKG_SUBMAP_MAP_WIDTH);
+    bkg.old_map_pos_x = bkg.old_map_pos_y = 255;
+    bkg.camera_max_y = (BKG_SUBMAP_MAP_HEIGHT - 18) * 8;
+    bkg.camera_max_x = (BKG_SUBMAP_MAP_WIDTH - 20) * 8;
+    set_bkg_submap(bkg.map_pos_x, bkg.map_pos_y, 20, 18, bkg_submap_map, BKG_SUBMAP_MAP_WIDTH);
     set_level(BKG_SUBMAP_MAP_WIDTH, BKG_SUBMAP_MAP_HEIGHT, bkg_submap_map);
 
-    old_camera_x = camera_x;
-    old_camera_y = camera_y;
+    bkg.old_camera_x = bkg.camera_x;
+    bkg.old_camera_y = bkg.camera_y;
 
-    redraw = FALSE;
-    indoor = 0;
+    bkg.redraw = FALSE;
+    bkg.indoor = 0;
 
-    SCX_REG = camera_x;
-    SCY_REG = camera_y;
+    SCX_REG = bkg.camera_x;
+    SCY_REG = bkg.camera_y;
     SHOW_BKG;
 }
