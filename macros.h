@@ -2,13 +2,9 @@
 #define __MACROS_H__
 
 #include <gb/gb.h>
-#include "bigmap_map.h"
-#include "bigmap_tiles.h"
-#include "bigmap_map.h"
-#include "bkg_apartment_scroll_map.h"
-#include "bkg_apartment_scroll_tiles.h"
 #include "maps/submap/submap.h"
 #include "maps/house/house.h"
+#include "maps/house/cellar/cellar.h"
 
 #define MIN(A, B) ((A) < (B) ? (A) : (B))
 

@@ -7,6 +7,7 @@ void main()
     DISPLAY_OFF;
     SHOW_BKG;
     init_submap();
+    bkg.sliding = FALSE;
 
     DISPLAY_ON;
 
@@ -22,6 +23,11 @@ void main()
         {
             init_house();
         }
+        else if (bkg.joy & J_A)
+        {
+            init_cellar();
+        }
+
         if (bkg.camera_style == vertical_cam)
         {
             if (bkg.joy & J_UP)
