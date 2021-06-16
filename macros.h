@@ -12,12 +12,20 @@
 
 #define MIN(A, B) ((A) < (B) ? (A) : (B))
 
+enum Cam
+{
+    vertical_cam,
+    horizontal_cam,
+    platforming_cam,
+    scroll_cam
+};
+
 typedef struct Variables
 {
     UINT16 camera_max_y;
     UINT16 camera_max_x;
     UBYTE joy;
-    UBYTE indoor;
+
     UBYTE sliding;
     INT8 slide_x;
     INT8 slide_y;
@@ -31,6 +39,7 @@ typedef struct Variables
     UINT8 level_map_width;
     UINT8 level_map_height;
     const UINT8 *level_map_data;
+    enum Cam camera_style;
 
 } Variables;
 

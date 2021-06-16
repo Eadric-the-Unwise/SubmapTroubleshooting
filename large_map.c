@@ -23,7 +23,7 @@ void main()
         {
             init_house();
         }
-        if (bkg.indoor)
+        if (bkg.camera_style == vertical_cam)
         {
             if (bkg.joy & J_UP)
             {
@@ -80,30 +80,32 @@ void main()
             bkg.slide_x = 0;
             bkg.slide_y = -2;
             bkg.sliding = 1;
-            if (bkg.indoor)
-            {
-                if (bkg.camera_y)
-                {
-                    bkg.camera_y--;
-                    bkg.redraw = TRUE;
-                }
-            }
         }
         else if (bkg.joy & J_DOWN)
         {
             bkg.slide_x = 0;
             bkg.slide_y = 2;
             bkg.sliding = 1;
-            if (bkg.indoor)
+        }
+        else if (bkg.camera_style == horizontal_cam)
+        {
+            if (bkg.joy & J_LEFT)
             {
-                if (bkg.camera_y)
+                if (bkg.camera_x)
                 {
-                    bkg.camera_y++;
+                    bkg.camera_x--;
+                    bkg.redraw = TRUE;
+                }
+            }
+            if (bkg.joy & J_RIGHT)
+            {
+                if (bkg.camera_x < bkg.camera_max_x)
+                {
+                    bkg.camera_x++;
                     bkg.redraw = TRUE;
                 }
             }
         }
-
         if (bkg.redraw)
         {
             wait_vbl_done();

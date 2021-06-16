@@ -23,7 +23,8 @@ void init_house()
     bkg.old_camera_y = bkg.camera_y;
 
     bkg.redraw = FALSE;
-    bkg.indoor = 1;
+
+    bkg.camera_style = horizontal_cam;
 
     SCX_REG = bkg.camera_x;
     SCY_REG = bkg.camera_y;
