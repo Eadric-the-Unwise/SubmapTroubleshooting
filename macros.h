@@ -3,7 +3,6 @@
 
 #include <gb/gb.h>
 #include <stdio.h>
-#include <stdint.h>
 #include "maps/submap/submap.h"
 #include "maps/house/house.h"
 #include "maps/house/cellar/cellar.h"

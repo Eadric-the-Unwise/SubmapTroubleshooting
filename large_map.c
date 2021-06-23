@@ -1,7 +1,7 @@
 #include <gb/gb.h>
+#include <stdio.h>
+#include <stdint.h>
 #include "macros.h"
-
-extern const void __bank_bkg_submap_map;
 
 void main()
 {
@@ -10,12 +10,10 @@ void main()
     SHOW_BKG;
     init_submap();
     bkg.sliding = FALSE;
-
     DISPLAY_ON;
+
     while (TRUE)
     {
-        func_1();
-
         bkg.joy = joypad();
         // Add above loop (beginning of else-if loop, effectively)
         if (bkg.joy & J_SELECT)
@@ -30,6 +28,12 @@ void main()
         {
             init_cellar();
         }
+        else if (bkg.joy & J_B)
+        {
+             init_cellar_lvl2();
+
+        }
+        
 
         if (bkg.camera_style == vertical_cam)
         {
