@@ -18,12 +18,12 @@ void init_submap()
     bkg.map_pos_x = (UBYTE)(bkg.camera_x >> 3u);
     bkg.map_pos_y = (UBYTE)(bkg.camera_y >> 3u);
 
-    set_bkg_data(0, BKG_SUBMAP_TILE_COUNT, BKG_SUBMAP_TILE_DATA);
+    set_bkg_data(0, SUBMAP_TILE_COUNT, SUBMAP_TILE_DATA);
     bkg.old_map_pos_x = bkg.old_map_pos_y = 255;
-    bkg.camera_max_y = (BKG_SUBMAP_MAP_HEIGHT - 18) * 8;
-    bkg.camera_max_x = (BKG_SUBMAP_MAP_WIDTH - 20) * 8;
-    set_bkg_submap(bkg.map_pos_x, bkg.map_pos_y, 20, 18, BKG_SUBMAP_MAP_DATA, BKG_SUBMAP_MAP_WIDTH);
-    set_level(BKG_SUBMAP_MAP_WIDTH, BKG_SUBMAP_MAP_HEIGHT, BKG_SUBMAP_MAP_DATA);
+    bkg.camera_max_y = (SUBMAP_MAP_HEIGHT - 18) * 8;
+    bkg.camera_max_x = (SUBMAP_MAP_WIDTH - 20) * 8;
+    set_bkg_submap(bkg.map_pos_x, bkg.map_pos_y, 20, 18, SUBMAP_MAP_DATA, SUBMAP_MAP_WIDTH);
+    set_level(SUBMAP_MAP_WIDTH, SUBMAP_MAP_HEIGHT, SUBMAP_MAP_DATA);
 
     bkg.old_camera_x = bkg.camera_x;
     bkg.old_camera_y = bkg.camera_y;

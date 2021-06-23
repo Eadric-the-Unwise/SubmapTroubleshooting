@@ -2,8 +2,8 @@
 #define __SUBMAP_H__
 
 #include <gb/gb.h>
-#include "bkg_submap_map.h"
-#include "bkg_submap_tiles.h"
+#include "submap_map.h"
+#include "submap_tiles.h"
 
 void init_submap();
 
