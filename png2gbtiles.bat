@@ -6,4 +6,7 @@
 @REM C:\c_code\projects\detective\detective_metasprite\build\gb_map_converter\gb_map_converter.exe -i ..\maps\bkg_apartment_lamp_top.png -n bkg_apartment_lamp_top -o ..\maps
 @REM C:\c_code\projects\detective\detective_metasprite\build\gb_map_converter\gb_map_converter.exe -i ..\maps\bkg_apartment_lamp_bot.png -n bkg_apartment_lamp_bot -o ..\maps
 
-C:\c_code\projects\detective\detective_metasprite\build\gb_map_converter\gb_map_converter.exe -i C:\c_code\projects\detective\submap_troubleshooting\maps\house\cellar\cellar.png -n cellar -o .\maps\house\cellar
+@REM C:\c_code\projects\detective\detective_metasprite\build\gb_map_converter\gb_map_converter.exe -i C:\c_code\projects\detective\submap_troubleshooting\maps\house\cellar\cellar_lvl2\cellar_lvl2.png -n cellar_lvl2 -o .\maps\house\cellar\cellar_lvl2
+@REM C:\c_code\projects\detective\detective_metasprite\build\gb_map_converter\gb_map_converter.exe -i C:\c_code\projects\detective\submap_troubleshooting\maps\submap\bkg_submap.png -n bkg_submap -o .\maps\submap
+
+C:\c_code\projects\detective\detective_metasprite\build\gb_map_converter\gb_map_converter.exe -i .\maps\house\cellar\cellar.png -n cellar -o .\maps\house\cellar

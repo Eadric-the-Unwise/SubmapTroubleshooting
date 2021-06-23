@@ -2,8 +2,8 @@
 #define __HOUSE_H__
 
 #include <gb/gb.h>
-#include "../../bkg_apartment_scroll_map.h"
-#include "../../bkg_apartment_scroll_tiles.h"
+#include "house_map.h"
+#include "house_tiles.h"
 
 void init_house();
 

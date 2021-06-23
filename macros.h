@@ -2,9 +2,12 @@
 #define __MACROS_H__
 
 #include <gb/gb.h>
+#include <stdio.h>
+#include <stdint.h>
 #include "maps/submap/submap.h"
 #include "maps/house/house.h"
 #include "maps/house/cellar/cellar.h"
+#include "maps/house/cellar/cellar_lvl2/cellar_lvl2.h"
 
 #define MIN(A, B) ((A) < (B) ? (A) : (B))
 

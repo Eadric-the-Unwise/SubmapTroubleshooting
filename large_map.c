@@ -1,18 +1,23 @@
 #include <gb/gb.h>
 #include "macros.h"
 
+extern const void __bank_bkg_submap_map;
+extern const void __submap;
+
 void main()
 {
     extern Variables bkg;
     DISPLAY_OFF;
     SHOW_BKG;
+    SWITCH_ROM_MBC1( (uint8_t)&__bank_bkg_submap_map );
     init_submap();
     bkg.sliding = FALSE;
 
     DISPLAY_ON;
-
     while (TRUE)
     {
+        func_1();
+
         bkg.joy = joypad();
         // Add above loop (beginning of else-if loop, effectively)
         if (bkg.joy & J_SELECT)
