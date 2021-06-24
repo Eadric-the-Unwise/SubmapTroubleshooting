@@ -30,10 +30,8 @@ void main()
         }
         else if (bkg.joy & J_B)
         {
-             init_cellar_lvl2();
-
+            init_cellar_lvl2();
         }
-        
 
         if (bkg.camera_style == vertical_cam)
         {

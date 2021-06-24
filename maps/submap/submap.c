@@ -1,10 +1,8 @@
 #include "submap.h"
 #include "../../macros.h"
 
-#pragma bank 255
-#ifndef __INTELLISENSE__
-const void __at(255) __submap;
-#endif
+extern const void __bank_submap_map;
+extern const void __bank_submap_tiles;
 
 extern Variables bkg;
 
@@ -18,12 +16,12 @@ void init_submap()
     bkg.map_pos_x = (UBYTE)(bkg.camera_x >> 3u);
     bkg.map_pos_y = (UBYTE)(bkg.camera_y >> 3u);
 
-    set_bkg_data(0, SUBMAP_TILE_COUNT, SUBMAP_TILE_DATA);
+    set_bkg_data_nonbanked(0, SUBMAP_TILE_COUNT, SUBMAP_TILE_DATA, (UINT8)&__bank_submap_tiles);
     bkg.old_map_pos_x = bkg.old_map_pos_y = 255;
     bkg.camera_max_y = (SUBMAP_MAP_HEIGHT - 18) * 8;
     bkg.camera_max_x = (SUBMAP_MAP_WIDTH - 20) * 8;
-    set_bkg_submap(bkg.map_pos_x, bkg.map_pos_y, 20, 18, SUBMAP_MAP_DATA, SUBMAP_MAP_WIDTH);
-    set_level(SUBMAP_MAP_WIDTH, SUBMAP_MAP_HEIGHT, SUBMAP_MAP_DATA);
+    set_bkg_submap_nonbanked(bkg.map_pos_x, bkg.map_pos_y, 20, 18, SUBMAP_MAP_DATA, SUBMAP_MAP_WIDTH, (UINT8)&__bank_submap_map);
+    set_level(SUBMAP_MAP_WIDTH, SUBMAP_MAP_HEIGHT, SUBMAP_MAP_DATA, (UINT8)&__bank_submap_map);
 
     bkg.old_camera_x = bkg.camera_x;
     bkg.old_camera_y = bkg.camera_y;
