@@ -10,6 +10,12 @@
 #include "maps/house/cellar/cellar_lvl2/cellar_lvl2.h"
 
 #define MIN(A, B) ((A) < (B) ? (A) : (B))
+//##joins the __bank and 'A' variable name together
+#define __BANK_PREFIX(A) __bank_##A
+#define BANK(A) (UBYTE) & (__BANK_PREFIX(A))
+// #define __SIZE_PREFIX(A) __size_##A
+// #define SIZE(A) (UWORD) & (__SIZE_PREFIX(A))
+// #define OFFSET(A) (void *)&(A)
 
 enum Cam
 {
